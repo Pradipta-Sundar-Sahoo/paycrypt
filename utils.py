@@ -613,7 +613,7 @@ class EnhancedLaneOptimizationSystem:
                     
                     Return a JSON with these fields:
                     1. key_findings: array of most important observations
-                    2. optimization_opportunities: array of specific actionable recommendations
+                    2. optimization_opportunities: array of specific actionable recommendations [use keys 'description', 'difficulty']
                     3. projected_benefits: object with expected improvements in processing_time, revenue, and customer_satisfaction
                     4. implementation_difficulty: ranking of each optimization opportunity (1-5 scale, 5 being most difficult)
                     """} 

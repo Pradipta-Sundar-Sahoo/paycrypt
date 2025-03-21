@@ -831,7 +831,7 @@ class AutomatedInsightsGenerator:
         self.client = None
         if openai_api_key:
             try:
-                self.client = OpenAI(api_key=openai_api_key)
+                self.client = openai.OpenAI(api_key=openai_api_key)
             except Exception as e:
                 print(f"Error initializing OpenAI client: {e}")
                 print("Automated insights will be generated without OpenAI.")
@@ -1050,7 +1050,7 @@ class AutomatedInsightsGenerator:
         report = {
             "summary": data_summary,
             "narrative": narrative,
-            "generated_at": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+            "generated_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
             "data_date": self.df['initiated_time'].dt.date.min().strftime("%Y-%m-%d")
         }
         
